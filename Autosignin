@@ -1,0 +1,20 @@
+Created on Mon Jun 22 17:17:15 2020
+
+@author: ChenShaonan
+"""
+
+
+# 自动SAIC-VW 主页提交表单
+import time
+from selenium import webdriver
+
+# 需要将chromedriver放到Chrome\Application目录下
+driver = webdriver.Chrome()
+
+request_url = 'http://svw.csvw.com/empnew/wps/myportal'
+driver.get(request_url)
+
+driver.find_element_by_xpath('//*[@id="username"]').send_keys('625**')
+driver.find_element_by_xpath('//*[@id="password"]').send_keys('********')
+driver.find_element_by_xpath('/html/body/div[3]/div/div/div/div[2]/form/div[2]/input').click()
+driver.get_screenshot_as_file("E:\Learnig\Python\SAICVW_img.jpg")
